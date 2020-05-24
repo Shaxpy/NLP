@@ -17,8 +17,8 @@ from nltk.stem import WordNetLemmatizer
 nltk.download('popular', quiet=True) # for downloading packages
 
 # uncomment the following only the first time
-nltk.download('punkt') # first-time use only
-nltk.download('wordnet') # first-time use onlyee
+# nltk.download('punkt') # first-time use only
+# nltk.download('wordnet') # first-time use onlyee
 
 
 #Reading in the corpus
@@ -40,7 +40,7 @@ def LemNormalize(text):
 
 # Keyword Matching
 GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey",)
-GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
+GREETING_RESPONSES = ["hi", "*nods*",  "nope", "Say it like you mean it!"]
 
 def greeting(sentence):
     """If user's input is a greeting, return a greeting response"""
@@ -78,11 +78,14 @@ while(flag==True):
             flag=False
             print("ROBO: You are welcome..")
         elif(user_response=='lol'):
-            flag=True
+            flag=False
             print('ROBO:Whats so funny?')
         elif(user_response=='i like you'):
-            flag=True
+            flag=False
             print('ROBO:I do not')
+        elif(user_response=='Did you hear about corona?'):
+            flag=False
+            print('ROBO:Actually, its Covid19')
         elif(user_response=='bears,beets,battlestar galactica'):
             flag=True
             print('ROBO:Identity theft is not a joke')
